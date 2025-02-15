@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Heart Animation</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+        }
+        .heart{
+            width: 80px;
+            height: 80px;
+            background: red;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: float 6s infinite ease-in-out;
+        }
+        .heart::before, .heart::after{
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart::before{
+            top: -40px;
+            left: 0;
+        }
+        .heart::after{
+            left: 40px;
+            top: 0;
+        }
+        @keyframes float{
+            0%{
+                transform: rotate(-45deg) translateY(0);
+            }
+            25%{
+                transform: rotate(-45deg) translateY(-150px);
+            }
+            50%{
+                transform: rotate(-45deg) translateX(0);
+                scale: 0.8;
+            }
+            75%{
+                transform: rotate(-45deg) translateY(150px);
+            }
+            100%{
+                transform: rotate(-45deg) translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+</body>
+</html>

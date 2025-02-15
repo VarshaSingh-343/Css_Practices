@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotating button</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333331;
+        }
+        .rotate{
+            padding: 20px 40px;
+            font-size: 24px;
+            border: none;
+            background-color: #f1c40f;
+            color: black;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+        }
+        .rotate:hover{
+            transform: rotate(360deg);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button class="rotate">Hover this button</button>
+</body>
+</html>

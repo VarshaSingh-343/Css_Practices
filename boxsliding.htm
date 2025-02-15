@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box sliding</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            animation: slide 2s infinite alternate ease-in-out;
+        }
+        @keyframes slide{
+            0%{transform: translateX(0);}
+            100%{transform: translateX(200px);}
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

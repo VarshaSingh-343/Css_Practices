@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Box</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+        }
+        .box{
+            width: 120px;
+            height: 120px;
+            background: blue;
+            animation: changeColor 3s infinite alternate;
+        }
+        @keyframes changeColor{
+            0%{background: blue;}
+            50%{background: red;}
+            100%{background: yellow;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

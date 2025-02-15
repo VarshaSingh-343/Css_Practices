@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card hover</title>
+    <style>
+         body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+         }
+         .card{
+            width: 200px;
+            height: 250px;
+            background-color: plum;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px #222;
+            transition: 0.3s ease-in-out;
+         }
+         .card:hover{
+            transform: translateY(-50px);
+            box-shadow: 0 15px 30px plum;
+         }
+    </style>
+</head>
+<body>
+    <div class="card"></div>
+</body>
+</html>

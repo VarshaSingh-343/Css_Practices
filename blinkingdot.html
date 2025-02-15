@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+        }
+        .dot{
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+        @keyframes blink{
+            50% {opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="dot">
+
+    </div>
+</body>
+</html>

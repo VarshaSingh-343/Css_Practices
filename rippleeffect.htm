@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ripple effect</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+        }
+        .ripple{
+            position: relative;
+            padding: 50px;
+            font-size: 25px;
+            border: none;
+            background-color: orchid;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .ripple::after{
+            content: "";
+            position: absolute;
+            background-color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            transform: scale(1);
+            transition: transform 0.6s, opacity 0.4s;
+        }
+        .ripple:active::after{
+            transform: scale(20);
+            opacity: 2;
+        }
+    </style>
+</head>
+<body>
+    <button class="ripple">CLICK ME</button>
+</body>
+</html>

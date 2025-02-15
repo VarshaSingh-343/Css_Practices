@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fading Text</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: black;
+        }
+        .fade-text{
+            font-size: 50px;
+            animation: fade 3s infinite alternate;
+        }
+        @keyframes fade{
+            0%{opacity: 1;}
+            100%{opacity: 0.1;}
+        }
+    </style>
+</head>
+<body>
+    <h1 class="fade-text">Animate Code</h1>
+</body>
+</html>
