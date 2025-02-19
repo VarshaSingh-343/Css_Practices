@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neon text</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+            margin: 0;
+            height: 100vh;
+        }
+        .neon{
+            font-family: cursive;
+            font-size: 60px;
+            font-weight: bold;
+            color: #fff;
+            transition: text-shadow 0.3s ease-in-out;
+        }
+        .neon:hover{
+            text-shadow: 0 0 15px cyan, 0 0 30px cyan, 0 0 60px cyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="neon">Neon Glowing Text</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Heart</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: silver;
+            height: 100vh;
+            margin: 0;
+        }
+        .heart{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: colorChange 4s infinite alternate ;
+        }
+        .heart::before, .heart::after{
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart::before{
+            top: -50px;
+            left: 0;
+        }
+        .heart::after{
+            left: 50px;
+            top: 0;
+        }
+        @keyframes colorChange{
+            0%{background-color: red;}
+            25%{background-color: orange;}
+            75%{background-color: magenta;}
+            100%{background-color: green;}
+        }
+        .heart::before, .heart::after{
+            animation: colorChange 4s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+</body>
+</html>

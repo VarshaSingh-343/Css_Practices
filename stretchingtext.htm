@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stretching text</title>
     <style>
-        
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            padding: 100px;
+            background-color: white;
+        }
+        .stretch{
+            font-family: cursive;
+            font-size: 40px;
+            font-weight: bold;
+            color: #2ecc71;
+            animation: stretch 1.5s infinite alternate;
+        }
+        @keyframes stretch{
+            0%{transform: scaleX(1);}
+            50%{transform: scaleY(1.5);}
+            100%{transform: scaleX(2);}
+        }
     </style>
 </head>
 <body>
-    
+    <div class="stretch">Write Your Text</div>
 </body>
 </html>
