@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bouncing dots loader</title>
+    <style>
+        body{ 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: skyblue; 
+            height: 100vh; 
+        } 
+        .loader{
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+        .dot{
+            width: 40px;
+            height: 40px;
+            background-color: purple;
+            border-radius: 50%;
+            animation: bounce 0.6s infinite alternate;
+        }
+        .dot:nth-child(2){animation-delay: 0.2s;}
+        .dot:nth-child(3){animation-delay: 0.4s;}
+        @keyframes bounce{
+            from {transform: translateY(0);}
+            to {transform: translateY(-25px);}
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="dot">
+
+        </div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</body>
+</html>

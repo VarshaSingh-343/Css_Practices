@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gradient background</title>
     <style>
-        
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #1a1a00;
+			margin: 0;
+			height: 100vh;
+		}
+		.box{
+			color: white;
+			width: 30%;
+			height: 50%;
+			border: 10px solid;
+			background: linear-gradient(45deg, red, blue);
+		}
     </style>
 </head>
 <body>
-    
+    <div class="box"></div>
 </body>
 </html>

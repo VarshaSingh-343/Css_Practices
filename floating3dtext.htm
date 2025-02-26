@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>floating 3d text</title>
+    <style>
+        .text{
+            font-size: 60px;
+            font-weight: bold;
+            color: yellow;
+            text-align: center;
+            display: inline-block;
+            text-shadow: 2px 2px 20px lime;
+            animation: float 2s infinite ease-in-out;
+        }
+        @keyframes float{
+            0%, 100% {transform: translateX(0) rotateX(0);}
+            50% {transform: translateX(-50px) rotateX(20deg);}
+        }
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">floating 3d text</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .static{
+            font-size: 4em;
+            font-weight: bold;
+            color: gold;
+            position: relative;
+            animation: static 0.1s infinite;
+        }
+        @keyframes static{
+            0%{
+                transform: translate(1px, -1px) rotate(0.5deg);
+            }
+            25%{transform: translate(-1px, 1px) rotate(-0.5deg);}
+            50%{ transform: translate(2px, 2px) rotate(0.8deg);}
+            75%{ transform: translate(-1px, -1px) rotate(-0.5deg);}
+            100%{ transform: translate(0 , 0) rotate(0);}
+        }
+        body{
+            background-color: black;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="static">STATIC NOISE</div>
+</body>
+</html>

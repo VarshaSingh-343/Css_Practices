@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient border</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #101;
+            height: 100vh;
+        }
+        .box{
+            padding: 30px 40px;
+            font-size: 28px;
+            border: 12px solid transparent;
+            border-radius: 15px;
+            font-weight: bold;
+            background: linear-gradient(white, white) padding-box, linear-gradient(45deg, yellow, red, lime) border-box;
+            box-shadow: 0 0 30px cyan;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .box:hover{
+            box-shadow: 3px 3px 60px cyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">glowing gradient border</div>
+</body>
+</html>
