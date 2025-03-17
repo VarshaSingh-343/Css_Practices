@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square{
+            width: 180px;
+            height: 180px;
+            background: transparent;
+            border: 2px dotted white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: cursive;
+            font-size: 25px;
+            transition: border-width 0.4s;
+        }
+        .square:hover{
+            border-width: 12px;
+            box-shadow: 0 0 20px white;
+            border-radius: 3px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="square">Hover me</div>
+</body>
+</html>

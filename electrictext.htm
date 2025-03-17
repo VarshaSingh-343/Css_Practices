@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .electric{
+            font-size: 6em;
+            font-weight: bold;
+            color: yellow;
+            text-shadow: 0 0 5px gold, 0 0 10px orange, 0 0 20px red;
+            animation: electric 0.08s infinite alternate;
+        }
+        @keyframes electric{
+            0%{ text-shadow: 0 0 5px gold, 0 0 10px 
+                orange;}
+            100%{ text-shadow: 0 0 10px gold, 0 0 20px 
+                red;}
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+    </style>  
+</head>
+<body>
+    <div class="electric">YOUR NAME</div>
+</body>
+</html>

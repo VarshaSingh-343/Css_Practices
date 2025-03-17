@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooting Stars</title>
+    <style>
+        body{
+            background: black;
+        }
+        .star{
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: cyan;
+            box-shadow: 0 0 6px cyan, 0 0 6px cyan;
+            animation: shoot 2.5s linear infinite;
+        }
+        @keyframes shoot{
+            from{
+                transform: translate(0, 0);
+            }
+            to{
+                transform: translate(400px, 200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="star"></div>
+</body>
+</html>

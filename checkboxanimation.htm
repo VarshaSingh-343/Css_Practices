@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .checkbox{
+            width: 40px;
+            height: 40px;
+            accent-color: green;
+            transform: scale(1);
+            transition: 0.2s;
+        }
+        .checkbox:checked{
+            transform: scale(1.5);
+            
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="checkbox">
+</body>
+</html>

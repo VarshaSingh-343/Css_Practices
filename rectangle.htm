@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rectangle{
+            width: 200px;
+            height: 140px;
+            background-color: purple;
+            border: 3px solid violet;
+            position: relative;
+            animation: move 1.5s infinite alternate ease-in-out;
+        }
+        @keyframes move{
+            0%{left: 0;}
+            100%{left: 200px;}
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: gray;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="rectangle"></div>
+</body>
+</html>

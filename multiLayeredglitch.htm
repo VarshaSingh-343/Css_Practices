@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .glitch{
+            font-size: 6em;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            display: inline-block;
+            animation: glitch-animation 1s infinite linear alternate-reverse;
+        }
+        .glitch::before, .glitch::after{
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+        .glitch::before{
+            color: red;
+            transform: translate(-2px, -2px);
+            animation: glitch-animation 0.8s infinite alternate-reverse;
+        }
+        .glitch::after{
+            color: cyan;
+            transform: translate(2x, 2px);
+            animation: glitch-animation 0.8s infinite alternate;
+        }
+        @keyframes glitch-animation{
+            0%{
+                transform: translate(0px, 0px);
+            
+            }
+            25%{
+                transform: translate(3px, -3px);
+            }
+            50%{
+                transform: translate(-3px, 3px);
+            }
+            75%{
+                transform: translate(3px, 3px);
+            }
+            100%{
+                transform: translate(-3px, -3px);
+            }
+        }
+        body {
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="glitch" data-text="Multi layer glitch">Multi layer glitch</div>
+</body>
+</html>
