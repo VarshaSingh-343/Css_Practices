@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Bubbles</title>
+    <style>
+        body{
+            background-color: black;
+            height: 100vh;
+        }
+        .bubble{
+            position: absolute;
+            bottom: -50px;
+            width: 60px;
+            height: 60px;
+            background: magenta;
+            border-radius: 50%;
+            opacity: 0.6s;
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float{
+            0%{
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+        .bubble:nth-child(1){
+            left: 10%;
+            animation-duration: 3s;
+        }
+        .bubble:nth-child(2){
+            left: 30%;
+            animation-duration: 4s;
+        }
+        .bubble:nth-child(3){
+            left: 50%;
+            animation-duration: 5s;
+        }
+        .bubble:nth-child(4){
+            left: 70%;
+            animation-duration: 6s;
+        }
+        .bubble:nth-child(5){
+            left: 90%;
+            animation-duration: 7s;
+        }
+    </style>
+</head>
+<body>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</body>
+</html>
