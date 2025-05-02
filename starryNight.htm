@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Night</title>
+    <style>
+        body {
+            background-color: black;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .star{
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            opacity: 0;
+            animation: twinkle 2s infinite;
+            box-shadow: 0 0 6px white;
+        }
+        @keyframes twinkle{
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        .star:nth-child(1){
+            top: 10%;
+            left: 20%;
+            animation-duration: 1s;
+        }
+        .star:nth-child(2){
+            top: 30%;
+            left: 40%;
+            animation-duration: 1.5s;
+        }
+        .star:nth-child(3){
+            top: 50%;
+            left: 60%;
+            animation-duration: 2s;
+        }
+        .star:nth-child(4){
+            top: 70%;
+            left: 80%;
+            animation-duration: 1.2s;
+        }
+        .star:nth-child(5){
+            top: 90%;
+            left: 50%;
+            animation-duration: 1.8s;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+</body>
+</html>

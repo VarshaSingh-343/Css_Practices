@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body, html {
+            margin: 10px;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        h6 {
+            font-size: 3rem;
+            color: #333;
+        }
+        
+        .parallax{
+            height: 100vh;
+            background-image: url('https://picsum.photos/300');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        .content{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="parallax"></div>
+    <div class="content">
+        <h6>Scroll Down for Parallax Effect</h6>
+    </div>
+    <div class="parallax"></div>
+</body>
+</html>

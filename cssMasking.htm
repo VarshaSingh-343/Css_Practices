@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #222;
+        }
+
+        .masked{
+            width: 200px;
+            height: 200px;
+            background: url('bird.jpg');
+            mask-image: radial-gradient(circle, white 60%, transparent 61%);
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="masked"></div>
+</body>
+</html>

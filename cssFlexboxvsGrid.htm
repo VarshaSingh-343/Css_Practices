@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox vs Grid</title>
+    <style>
+        .container {
+            margin: 20px;
+        }
+        .box {
+            width: 40px; height: 40px;
+            background-color: lightblue;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .flex-container{
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            border: 2px solid red;
+            padding: 10px;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 90%;
+            gap: 10px;
+            border: 2px solid red;
+            padding:  10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Flexbox Example</h3>
+        <div class="flex-container">
+            <div class="box">flex 1</div>
+            <div class="box">flex 2</div>
+            <div class="box">flex 3</div>
+            <div class="box">flex 4</div>
+        </div>
+
+        <h3>Grid Example</h3>
+        <div class="grid-container">
+            <div class="box">grid 1</div>
+            <div class="box">grid 2</div>
+            <div class="box">grid 3</div>
+            <div class="box">grid 4</div>
+        </div>
+    </div>
+    
+
+</body>
+</html>

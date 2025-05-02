@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plus Sign</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+        }
+        .loader{
+            width: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .loader div{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            background: yellow;
+            animation: rotate 1s infinite linear;
+        }
+        .loader div:nth-child(1){
+            top: 0;
+            animation-delay: 0s;
+        }
+        .loader div:nth-child(2){
+            bottom: 0;
+            animation-delay: 0.25s;
+        }
+        .loader div:nth-child(3){
+            left: 0;
+            animation-delay: 0.5s;
+        }
+        .loader div:nth-child(4){
+            right: 0;
+            animation-delay: 0.75s;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

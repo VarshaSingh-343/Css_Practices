@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: orange;
+        }
+
+        .transition-box{
+            transition: transform 0.3s ease;
+        }
+        .transition-box:hover{
+            transform: scale(1.5);
+        }
+        .animation-box{
+            animation: move 1s infinite alternate;
+        }
+        @keyframes move{
+            from{
+                transform:  translateY(0);
+            }
+            to{
+                transform: translateY(-40px);
+            }
+        }
+
+        
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="transition-box"></div>
+    <div class="animation-box"></div>
+</body>
+</html>

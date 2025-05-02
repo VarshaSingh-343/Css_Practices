@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scroll Progress Bar</title>
+  <style>
+    body {
+      margin: 0;
+      height: 2000px;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    .progress-container{
+        position: fixed;
+        top: 90px;
+        width: 100%;
+        height: 10px;
+        background: silver;
+    }
+    .progress-bar{
+        height: 100%;
+        width: 0;
+        background: green;
+        transition: 0.25s;
+    }
+    
+  </style>
+</head>
+<body>
+  <h2>Progress bar to indicate scrolling</h2>
+  <div class="progress-container">
+    <div class="progress-bar" id="bar"></div>
+  </div>
+  <script>
+    window.onscroll = () => {
+        const bar = document.getElementById("bar");
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        bar.style.width = (document.documentElement.scrollTop / scrollHeight) * 100 +"%";
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: gray;
+        }
+        .masked{
+            width: 250px;
+            height: 250px;
+            background: url('https://picsum.photos/300') center/cover;
+            mask-image: radial-gradient(circle, white 40%, transparent 41%);
+            mask-size: 100% 100%;
+            transition: mask-image 5s ease-in-out;
+        }
+        .masked:hover{
+            mask-image: radial-gradient(circle, white 100%, transparent 101%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="masked"></div>
+</body>
+</html>

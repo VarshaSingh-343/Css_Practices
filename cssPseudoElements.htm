@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo elements</title>
+    <style>
+        p::before{
+            content: "\1F449";
+        }
+        p::after{
+            content: " after";
+            color: blue;
+        }
+        p::first-letter{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        p::first-line{
+            color: pink;
+        }
+       
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: gray;
+         }
+    </style>
+</head>
+<body>
+        <p>first paragraph</p>
+        <p>second paragraph</p>
+
+</body>
+</html>

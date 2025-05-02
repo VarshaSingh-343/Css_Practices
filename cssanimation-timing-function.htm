@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 50px;
+            height: 50px;
+            padding: 20px;
+            background: pink;
+            position: relative;
+            animation: move 2s infinite;
+            /* animation-timing-function: linear; */
+            /* animation-timing-function: ease; */
+            /* animation-timing-function: ease-in;
+             */
+             /* animation-timing-function: eaee-out;
+              */
+              animation-timing-function: ease-in-out;
+        }
+        @keyframes move{
+            0%{
+                left: 0;
+            }
+            100%{
+                left: 100px;
+            }
+        }
+
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background: gray;
+            padding: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">this is box</div>
+</body>
+</html>

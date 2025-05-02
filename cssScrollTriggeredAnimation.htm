@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-family: sans-serif;
+            height: 250vh;
+            background: #f0f0f0;
+        }
+        .box {
+            width: 120px;
+            height: 120px;
+            background: lightblue;
+            margin: 50px auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+        .box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+        const boxes = document.querySelectorAll('.box');
+        const observer = new IntersectionObserver(entries=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        boxes.forEach(box=> observer.observe(box));
+    </script>
+
+</body>
+</html>

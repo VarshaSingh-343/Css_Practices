@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Shorthand Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .text{
+            font-size: 40px;
+            font-weight: bold;
+            animation: fontChange 5s infinite alternate ease-in-out;
+        }
+        @keyframes fontChange{
+            0%{
+                font: normal 20px Arial, sans-serif;
+            }
+            25%{
+                font: italic small-caps bold 30px Georgia, serif;
+            }
+            50%{
+                font-variant: small-caps;
+                 font-size: 40px;
+            }
+            75%{
+                font: oblique lighter 30px "Courier New", monospace;
+            }
+            100%{
+                font: normal 20px cursive, sans-serif;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="text">CSS font animation</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            counter-reset: section;
+        }
+        h2::before{
+            counter-increment: section;
+            content: " counter " counter(section) " : ";
+            font-weight: bold;
+            color: red;
+        }
+
+         h2 {
+            margin: 10px 0;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>first</h2>
+    <h2>second</h2>
+    <h2>third</h2>
+    <h2>fourth</h2>  
+</body>
+</html>

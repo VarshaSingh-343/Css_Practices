@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .skeleton{
+            width: 100%;
+            max-width: 200px;
+            height: 30px;
+            border-radius: 15px;
+            background: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+        .skeleton::after{
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg,transparent, gray, transparent);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer{
+            100%{
+                left: 100%;
+            }
+        }
+
+         body {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 40px;
+            margin: 70px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="skeleton"></div>
+    <div class="skeleton" style="width: 80%;"></div>
+    <div class="skeleton" style="width: 80%;"></div>
+</body>
+</html>

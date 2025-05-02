@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+            color: #111;
+            margin: 30px;
+        }
+
+       
+@media (orientation: landscape) {
+      .box {
+        background-color: lightgreen;
+      }
+      body{
+        background-color: gray;
+      }
+    }
+    /* Orientation: Portrait */
+    @media (orientation: portrait) {
+      .box {
+        background-color: lightcoral;
+      }
+    }
+    /* High Resolution (Retina-like) */
+    @media (min-resolution: 2dppx) {
+      .box {
+        border: 10px double blue;
+      }
+    }
+    </style>
+</head>
+<body>
+    <div class="box">Resize Me!</div>
+</body>
+</html>

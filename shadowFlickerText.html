@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #011;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1{
+            color: #fff;
+            font-size: 4em;
+            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+            animation: flicker 1.5s infinite;
+        }
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+            }
+            20%, 22%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Animate Code</h1>
+</body>
+</html>

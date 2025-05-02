@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Animation</title>
+  <style>
+    .box{
+        width: 70px;
+        height: 70px;
+        background-color: green;
+        animation: bounce 1s infinite;
+    }
+    @keyframes bounce{
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-50px);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    
+    body {
+      background: silver;
+      font-family: sans-serif;
+      margin: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
