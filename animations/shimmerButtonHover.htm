@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shimmer Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: plum;
+    }
+
+    .button {
+      position: relative;
+      padding: 33px;
+      font-size: 24px;
+      color: #fff;
+      background: #222;
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .button::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, yellow, transparent);
+        transform: skewX(-50deg);
+        transition: all 2.2s ease-in-out
+    }
+    .button:hover::before{
+        left: 250%;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <button class="button">Hover Me</button>
+</body>
+</html>

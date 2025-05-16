@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    nav {
+      background: #333;
+      color: white;
+      padding: 10px 40px;
+      margin-top: 30px;
+    }
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu ul{
+        list-style: none;
+        display: flex;
+        gap: 15px;
+    }
+    .menu ul li{
+        cursor: pointer;
+    }
+    .menu-toggle{
+        display: none;
+    }
+    .menu-icon{
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+    }
+    @media(max-width: 600px){
+        .menu ul{
+            display: none;
+            flex-direction: column;
+            background: #444;
+            margin-top: 10px;
+        }
+        .menu-toggle:checked + .menu-icon + ul{
+            display: flex;
+        }
+        .menu-icon{
+            display: block;
+        }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="menu">
+      <div>Logo</div>
+      <input type="checkbox" class="menu-toggle" id="toggle">
+      <label for="toggle" class="menu-icon">&#9776;</label>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </nav>
+
+</body>
+</html>

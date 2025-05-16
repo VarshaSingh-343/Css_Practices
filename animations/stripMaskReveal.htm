@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strip Mask Reveal</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: white;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    .text{
+        font-size: 3.5rem;
+        font-weight: bold;
+        background: linear-gradient(90deg, green, blue);
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-mask-image: repeating-linear-gradient(
+            to bottom,
+            #000 0 10%,
+            transparent 10% 20%
+        );
+        -webkit-mask-size: 100% 200%;
+        -webkit-mask-repeat: no-repeat;
+        animation: reveal 3s ease-in-out forwards infinite;
+    }
+    @keyframes reveal{
+        from{
+            -webkit-mask-position: 0% 100%;
+        }
+        to{
+            -webkit-mask-position: 0% 0%;
+        }
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="text">MASKED STRIPS</div>
+</body>
+</html>

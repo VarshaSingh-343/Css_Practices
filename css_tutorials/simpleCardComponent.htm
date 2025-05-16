@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Card</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      background: #f0f0f0;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .card{
+        width: 300px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition:  transform 0.2s;
+    }
+    .card:hover{
+        transform: scale(1.03);
+    }
+    .card img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .card-content{
+        padding: 16px;
+    }
+    .card h3{
+        margin: 0 0 8px;
+    }
+    .card p{
+        color: #555;
+        font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://picsum.photos/300" alt="Card Image">
+    <div class="card-content">
+      <h3>Card Title</h3>
+      <p>This is a simple card component built with HTML and CSS.</p>
+    </div>
+  </div>
+
+</body>
+</html>

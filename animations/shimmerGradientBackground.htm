@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shimmer Gradient Background</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    .shimmer-bg{
+        justify-content: center;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        font-size: 2rem;
+        font-family: cursive;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(-45deg, blue, purple, skyblue, magenta);
+        background-size: 400% 400%;
+        animation: shimmer 8s ease infinite;
+    }
+    @keyframes shimmer{
+        0%{
+            background-position: 0% 50%;
+        }
+        50%{
+            background-position: 100% 50%;
+        }
+        100%{
+            background-position: 0% 50%;
+        }
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="shimmer-bg">Shimmer Gradient Background ✨</div>
+</body>
+</html>
