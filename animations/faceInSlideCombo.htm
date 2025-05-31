@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fade In Slide</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: gray;
+      font-family: sans-serif;
+    }
+    .fade-slide{
+        opacity: 0;
+        transform: translateY(70px);
+        animation: fadeSlideIn 6s ease-out forwards;
+        background: #fff;
+        padding: 40px 50px;
+        border-radius: 10px;
+        color: #333;
+        font-size: 1.5rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    @keyframes fadeSlideIn{
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+  
+  </style>
+</head>
+<body>
+
+  <div class="fade-slide">Sliding Animate Code</div>
+
+</body>
+</html>

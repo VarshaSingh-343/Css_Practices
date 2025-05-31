@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Star Rating System</title>
+  <style>
+        body{
+            margin-top: 6rem;
+            text-align: center;
+            font-size: 30px;
+        }
+        .rating{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+        .rating input{
+            display: none;
+        }
+        .rating label{
+            font-size: 3rem;
+            color: #ccc;
+            cursor: pointer;
+            padding-right: 20px;
+            transition: color 0.3s;
+        }
+        .rating input:checked ~ label, 
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: gold;
+        }
+        @media (max-width: 600px){
+            .rating label {
+                font-size: 3.5rem;
+            }
+        }
+        
+  </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Rate Us</h2>
+    <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5">★</label>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4">★</label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3">★</label>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2">★</label>
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1">★</label>
+    </div>
+</body>
+</html>
