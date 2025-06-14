@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bounce In Text</title>
+  <style>
+    body {
+      background: skyblue;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1{
+        font-size: 2rem;
+        animation: bounceIn 5s ease alternate;
+    }
+    @keyframes bounceIn{
+        0%{
+            transform: scale(0.3);
+            opacity: 0;
+        }
+        50%{
+            transform: scale(1);
+            opacity: 1;
+        }
+        70%{
+            transform: scale(0.4);
+
+        }
+        100%{
+            transform: scale(2);
+        }
+    }
+  </style>
+</head>
+<body>
+  <h1>Bounce In Text</h1>
+</body>
+</html>

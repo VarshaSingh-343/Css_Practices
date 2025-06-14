@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expandable Section</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      padding: 2rem;
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    .accordion{
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    input[type="checkbox"]{
+      display: none;
+    }
+    label{
+      display: block;
+      background: orange;
+      color: black;
+      padding: 2rem;
+      cursor: pointer;
+      border-radius: 8px 8px 0 0;
+    }
+    .content{
+      max-height: 0;
+      overflow: hidden;
+      background: yellow;
+      padding: 0 2rem;
+      line-height: 3.5rem;
+      transition: max-height 2s ease;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+    }
+    input:checked ~ .content{
+      max-height: 400px;
+      padding: 2rem;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="accordion">
+    <input type="checkbox" id="toggle" />
+    <label for="toggle">About This Project ⬇️</label>
+    <div class="content">
+      <p>
+        This project is built with HTML and CSS only.  
+        You can expand or collapse this section without any JavaScript.  
+        Great for mobile-friendly UI components!
+      </p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Shapes</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    .shape{
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .square{
+        background-color: red;
+    }
+    .circle{
+        background-color: pink;
+        border-radius: 50%;
+    }
+    .triangle{
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid green;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="shape square">square</div>
+  <div class="shape circle">circle</div>
+  <div class="shape triangle">triangle</div>
+</body>
+</html>
