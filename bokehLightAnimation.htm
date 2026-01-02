@@ -1,0 +1,60 @@
+
+  <title>Soft Bokeh Particles</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle, #1e3c72, #2a5298);
+      overflow: hidden;
+    }
+    canvas{
+      display: block;
+    }
+  </style>
+
+<body>
+    <canvas id="bokehCanvas"></canvas>
+    <script>
+        const canvas= document.getElementById("bokehCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        window.addEventListener("resize",()=>{
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        });
+        const totalCircles = 40;
+        const circles=[];
+        for(let i = 0; i < totalCircles; i++){
+          circles.push({
+            x:Math.random()*canvas.width,
+            y:Math.random()*canvas.height,
+            size:Math.random()* 30+10,
+            opacity: Math.random() *0.5+0.2,
+            speed: Math.random()*0.5+0.1,
+            color: `hsl(${Math.random() * 360}, 100%, 85%)`
+          });
+        }
+        function drawCircles(){
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+          for(let circle of circles){
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.size, 0, Math.PI*2);
+            ctx.fillStyle = circle.color;
+            ctx.globalAlpha = circle.opacity;
+            ctx.shadowColor = circle.color;
+            ctx.shadowBlur = 15;
+            ctx.fill();
+            circle.y -= circle.speed;
+
+            if(circle.y + circle.size <0){
+              circle.y = canvas.height +circle.size;
+              circle.x = Math.random() * canvas.width;
+            }
+          }
+          ctx.globalAlpha = 1;
+          requestAnimationFrame(drawCircles);
+        }
+        drawCircles();
+    </script>
+</body>
+

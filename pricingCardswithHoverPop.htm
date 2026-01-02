@@ -1,0 +1,95 @@
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #efe8e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .card-container{
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card{
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 5px 15px rgba(0 ,0,0,0.1);
+        width: 280px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover{
+        transform: scale(1.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    .card h2{
+        font-size: 24px;
+        margin-bottom: 1rem;
+    }
+    .card p{
+        font-size: 18px;
+        margin: 1rem 0;
+    }
+    .card .price{
+        font-size: 32px;
+        color: #007bff;
+        font-weight: bold;
+    }
+    .card button{
+        margin-top: 1rem;
+        padding: 10px 20px;
+        border: none;
+        color: white;
+        background: #007bff;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .card button:hover{
+        background: #0056b3;
+    }
+
+
+  </style>
+
+<body>
+
+  <div class="card-container">
+    <div class="card">
+      <h2>Basic</h2>
+      <p class="price">$9/mo</p>
+      <p>1 Website<br>10GB Storage</p>
+      <button>Select</button>
+    </div>
+
+    <div class="card">
+      <h2>Pro</h2>
+      <p class="price">$29/mo</p>
+      <p>5 Websites<br>50GB Storage</p>
+      <button>Select</button>
+    </div>
+
+    <div class="card">
+      <h2>Premium</h2>
+      <p class="price">$59/mo</p>
+      <p>Unlimited Sites<br>200GB Storage</p>
+      <button>Select</button>
+    </div>
+  </div>
+
+</body>

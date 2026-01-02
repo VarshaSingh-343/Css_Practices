@@ -1,0 +1,47 @@
+
+<title>Floating Confetti & Emoji</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #7793e1;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+  .emoji{
+        position: absolute;
+        top: -50px;
+        font-size: 2rem;
+        animation: fall linear infinite;
+  }
+  @keyframes fall{
+    0%{
+        transform: translateY(-50px) rotate(0deg) ;
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.4;
+    }
+  }
+
+</style>
+
+<body>
+    <h1 style="text-align: center; padding-top: 100px;">Lets celebrate!</h1>
+    <script>
+        const emojis = ["🎉", "🎇", "🎈", "💖", "🎁", "🎊"];
+        function createEmoji(){
+            const emoji = document.createElement("div");
+            emoji.className = "emoji";
+            emoji.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+            emoji.style.left = Math.random() * 100 + "vw";
+            emoji.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            emoji.style.fontSize = (Math.random() * 30 +50) + "px";
+            document.body.appendChild(emoji);
+            setTimeout(()=>emoji.remove(), 5000);
+        }
+        setInterval(createEmoji, 300);
+    </script>
+</body>
+</html>

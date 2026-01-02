@@ -1,0 +1,52 @@
+
+  <style>
+    body {
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    input{
+        width: 300px;
+        padding: 20px;
+        font-size: 20px;
+        border: 2px solid #444;
+        border-radius: 8px;
+        background: white;
+        color: black;
+        outline: none;
+        transition: 0.3s;
+    }
+    input:focus{
+        animation: pulse 1.2s infinite;
+        border-color: transparent;
+        box-shadow: 0 0 10px red;
+    }
+    @keyframes pulse{
+        0%{
+            box-shadow: 0 0 10px red;
+        }
+        50%{
+            box-shadow: 0 0 20px red;
+        }
+        100%{
+            box-shadow: 0 0 10px red;
+        }
+    }
+
+  </style>
+
+<body>
+  <div class="form-group">
+    <input type="text" placeholder="Enter something...">
+    <input type="text" placeholder="Your Name...">
+  </div>
+</body>
+
+

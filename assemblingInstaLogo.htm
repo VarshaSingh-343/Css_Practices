@@ -1,0 +1,88 @@
+<style>
+  body {
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .insta {
+    width: 40vw;
+    height: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(
+      circle at 30% 100%,
+      #ffd700,
+      #ff8833,
+      #e1306c,
+      #a31db2,
+      #4a5bd5
+    );
+    border-radius: 30%;
+    overflow: hidden;
+  }
+  .insta-logo {
+    width: 30vw;
+    aspect-ratio: 1;
+    max-width: 200px;
+    border: 2.5vw solid white;
+    border-radius: 30%;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pop 2s ease-out forwards;
+    opacity: 0;
+  }
+  .insta-circle {
+    position: absolute;
+    aspect-ratio: 1;
+    border: 2.5vw solid white;
+    border-radius: 50%;
+    width: 40%;
+    top: -100%;
+    left: 20%;
+    animation: drop 2s ease forwards 0.4s;
+  }
+  .insta-dot {
+    position: absolute;
+    aspect-ratio: 1;
+    background: white;
+    border-radius: 50%;
+    width: 12%;
+    top: 15%;
+    right: -50%;
+    animation: slide 2s ease forwards 0.8s;
+  }
+
+  @keyframes pop{
+    to{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes drop{
+    to{
+      top: 21%;
+    }
+  }
+  @keyframes slide{
+    to{
+      right: 15%;
+    }
+  }
+</style>
+
+<body>
+  <div class="insta">
+    <div class="insta-logo">
+      <div class="insta-circle"></div>
+      <div class="insta-dot"></div>
+    </div>
+  </div>
+</body>

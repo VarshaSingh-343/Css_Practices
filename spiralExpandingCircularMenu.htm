@@ -1,0 +1,118 @@
+
+  <title>Spiral Expanding Menu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: radial-gradient(circle, #fceabb, #ca9605);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: sans-serif;
+    }
+    .menu-container {
+     --radius: 150px;
+      position: relative;
+      width: 120px;
+      height: 120px;
+    }
+    .menu-btn {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+      border-radius: 50%;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 2;
+      transition: transform 0.3s;
+    }
+     .menu-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+    .menu-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 80px;
+      height: 80px;
+      background: white;
+      color: #333;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s;
+      z-index: 1;
+    }
+    .menu-item:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: #f0f0f0;
+    }
+    .menu-container.open .menu-item {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    
+  </style>
+
+<body>
+  <div class="menu-container" id="menu">
+    <button class="menu-btn" id="toggle" aria-expanded="false">Click</button>
+    <div class="menu-item">Menu1</div>
+    <div class="menu-item">Menu2</div>
+    <div class="menu-item">Menu3</div>
+    <div class="menu-item">Menu4</div>
+    <div class="menu-item">Menu5</div>
+    <div class="menu-item">Menu6</div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('toggle');
+    const menu = document.getElementById('menu');
+    const items = menu.querySelectorAll('.menu-item');
+    const setTransform = (el, x, y, scale) => {
+      el.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(${scale})`;
+    };
+    const positionItems = (open) => {
+      toggle.disabled = true;
+      toggle.textContent = open ? '×' : 'Click';
+      toggle.setAttribute('aria-expanded', open);
+       const radius = parseInt(getComputedStyle(menu).getPropertyValue('--radius'));
+      const step = (2 * Math.PI) / items.length;
+      items.forEach((item, i) => {
+        if (open) {
+          const angle = i * step - Math.PI / 2;
+          setTransform(item, Math.cos(angle) * radius, Math.sin(angle) * radius, 1);
+        } else {
+          setTransform(item, 0, 0, 0);
+        }
+      });
+      setTimeout(() => (toggle.disabled = false), 500);
+    };
+      toggle.addEventListener('click', () => {
+      if (toggle.disabled) return;
+      menu.classList.toggle('open');
+      positionItems(menu.classList.contains('open'));
+    });
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
+
+
+  </script>
+  
+</body>

@@ -1,0 +1,67 @@
+<!-- circular wave pulse with orbiting dot -->
+
+<style>
+  body {
+    margin: 0;
+    background: #383838;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
+
+<canvas id="waveCanvas" width="400" height="400"></canvas>
+<script>
+  const canvas = document.getElementById("waveCanvas");
+  const ctx = canvas.getContext("2d");
+
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+  const baseRadius = 120;
+  const amplitude = 15;
+  const frequency = 6;
+  const waveSpeed = 0.05;
+  const angleStep = 1;
+  let phase = 0;
+  let dotAngle = 0;
+
+  function drawCircularWave() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    const wavePoints = [];
+    for (let deg = 0; deg <= 360; deg += angleStep) {
+      const rad = (deg * Math.PI) / 180;
+      const wave = Math.sin(rad * frequency + phase) * amplitude;
+      const r = baseRadius + wave;
+      const x = centerX + r * Math.cos(rad);
+      const y = centerY + r * Math.sin(rad);
+      wavePoints.push({ x, y });
+      if (deg === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+
+    const gradient = ctx.createRadialGradient(centerX, centerY, 50, centerX, centerY, baseRadius + amplitude);
+    gradient.addColorStop(0, "#01f");
+    gradient.addColorStop(1, "#01aaff");
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = 10;
+    ctx.stroke();
+
+    const dotIndex = Math.floor(dotAngle % 360 / angleStep);
+    const dot = wavePoints[dotIndex];
+    if (dot) {
+      ctx.beginPath();
+      ctx.arc(dot.x, dot.y, 15, 0, Math.PI * 2);
+      ctx.fillStyle = "#ff3e3e";
+      ctx.fill();
+    }
+
+     phase += waveSpeed;
+    dotAngle += 1.5;
+    requestAnimationFrame(drawCircularWave);
+
+  }
+  drawCircularWave();
+</script>

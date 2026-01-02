@@ -1,0 +1,42 @@
+
+  <title>Animated WhatsApp Icon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0ffe0, #a3d9a5);
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+    .whatsApp-icon{
+      font-size: 10rem;
+      color: #25D366;
+      background: #fff;
+      border-radius: 50%;
+      padding: 40px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 50px rgba(8,106,44,0.5);
+    }
+    .whatsApp-icon:hover{
+      transform: scale(1.5) rotate(5deg); 
+      color: #fff;
+      background-color: #25D366;
+      box-shadow: 0 0 40px #25D366, 0 0 50px #25D366;
+      animation: bounce 2s ease infinite;
+    }
+    @keyframes bounce{
+      0%, 100%{
+          transform: translateY(0);
+      }
+      50%{
+        transform: translateY(-30px);
+      }
+    }
+  </style>
+
+<body>
+    <i class="fa fa-whatsapp WhatsApp-icon"></i>
+</body>
+

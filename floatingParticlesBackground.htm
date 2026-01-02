@@ -1,0 +1,61 @@
+
+  <title>Floating Particles Background</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: sans-serif;
+    }
+    h1 {
+      z-index: 2;
+      position: relative;
+      font-size: 3rem;
+    }
+        canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+
+<body>
+  <h1>✨</h1>
+  <canvas id="particles"></canvas>
+  <script>
+        const canvas = document.getElementById("particles");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const particles = [];
+        for (let i = 0; i < 100; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 12 + 2,
+            speedX: (Math.random() - 0.8) * 2,
+            speedY: (Math.random() - 0.5) * 1.5
+        });
+        }
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(255,255,255,0.8)";
+            ctx.fill();
+            p.x += p.speedX;
+            p.y += p.speedY;
+            if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+        });
+              requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+
+  </script>
+</body>
+

@@ -1,0 +1,61 @@
+<title>Helix Waves</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #373737;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    svg{
+        width: 80%;
+        height: 200px;
+        overflow: visible;
+
+    }
+    path{
+        fill: none;
+        stroke-width: 15;
+    }
+    #wave1{
+        stroke: blue;
+    }
+    #wave2{
+        stroke: magenta;
+    }
+    
+  </style>
+</head>
+<body>
+    <svg class="viewBox">
+        <path id="wave1"></path>
+        <path id="wave2"></path>
+    </svg>
+</body>
+<script>
+     const wave1 = document.getElementById('wave1');
+    const wave2 = document.getElementById('wave2');
+    let t = 0;
+    function animate() {
+      const amplitude = 70;
+      const wavelength = 80;
+      const height = 100;
+      const width = 800;
+      let d1 = `M0 ${height}`;
+      let d2 = `M0 ${height}`;
+      for(let x = 0; x <= width; x++) {
+        const y1 = height + Math.sin((x / wavelength) + t) * amplitude;
+        const y2 = height + Math.sin((x / wavelength) + t + Math.PI) * amplitude; 
+        d1 += ` L${x} ${y1}`;
+        d2 += ` L${x} ${y2}`;
+      }
+      wave1.setAttribute('d', d1);
+      wave2.setAttribute('d', d2);
+      t += 0.05;
+      requestAnimationFrame(animate);
+    }
+    animate();
+</script>
+</html>

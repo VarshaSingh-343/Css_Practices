@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Double Border Glow</title>
+  <style>
+    body {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    input{
+        width: 300px;
+        padding: 20px;
+        font-size: 20px;
+        border: 2px solid #aaa;
+        border-radius: 8px;
+        background: #fff;
+        color: #333;
+        outline: none;
+        transition: 0.7s ease;
+    }
+    input::placeholder{
+        color: #999;
+    }
+    input:focus{
+        border-color: transparent;
+        box-shadow: 0 0 0 5px cyan,
+            0 0 18px 8px magenta;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <input type="text" placeholder="Your Name">
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<style>
+    body {
+        background: gray;
+        color: white;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    input{
+      width: 350px;
+      padding: 20px;
+      font-size: 20px;
+      border: 2px solid #444;
+      border-radius: 8px;
+      color: white;
+      outline: none;
+      transition: 0.3s;
+      background: gray;
+    }
+    input::placeholder{
+      color: white;
+      opacity: 1;
+    }
+    input:focus{
+      border-color: transparent;
+      animation: glow 2s linear infinite;
+      box-shadow: 0 0 12px magenta, 0 0 24px cyan;
+    }
+    @keyframes glow{
+      0%{
+        box-shadow: 0 0 12px magenta, 0 0 24px cyan;
+      }
+      33%{
+        box-shadow: 0 0 12px cyan, 0 0 24px lime;
+      }
+      66%{
+        box-shadow: 0 0 12px lime, 0 0 24px red;
+      }
+      100%{
+        box-shadow: 0 0 12px red, 0 0 24px magenta;
+      }
+    }
+
+</style>
+<body>
+    <div class="form-group">
+        <input type="text" placeholder="Your Name"> <br><br>
+        <input type="email" placeholder="Email Address">
+    </div>
+
+</body>

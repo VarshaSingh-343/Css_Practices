@@ -1,0 +1,51 @@
+
+  <style>
+    body {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    input{
+        width: 320px;
+        padding: 18px;
+        font-size: 18px;
+        border: 2px solid #aaa;
+        border-radius: 10px;
+        color: #333;
+        background: #fff;
+        outline: none;
+        transition: 0.4s ease;
+    }
+    input::placeholder{
+        color: #999;
+    }
+    input:focus{
+        border-color: transparent;
+        animation: pulse 1.5s infinite ease-in-out;
+        box-shadow: 0 0 0 4px cyan, 0 0 12px 6px magenta;
+    }
+    @keyframes pulse{
+        0%{
+            box-shadow: 0 0 4px cyan, 
+            0 0 12px 6px magenta;
+        }
+        50%{
+            box-shadow: 0 0 0 10px cyan,
+            0 0 28px 14px magenta;
+        }
+        100%{
+            box-shadow: 0 0 0 4px cyan,
+            0 0 12px 6px magenta;
+        }
+    }
+    
+  </style>
+
+<body>
+  <input type="text" placeholder="Your Name" />
+</body>
+

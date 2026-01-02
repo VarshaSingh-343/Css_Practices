@@ -1,0 +1,95 @@
+
+  <title>Glowing Profile Card - Tilt Hover</title>
+  <style>
+    body {
+      background: #111;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      color: #fff;
+    }
+
+    .card {
+      width: 320px;
+      height: 380px;
+      perspective: 1000px;
+    }
+    .inner {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      color: white;
+      transition: transform 0.3s ease, 
+      box-shadow 0.3s ease, border 0.3s;
+      transform-style: preserve-3d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 0 10px cyan;
+    }
+    .inner img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 10px;
+    }
+    .card:hover .inner {
+      transform: rotateY(15deg) rotateX(10deg);
+      box-shadow: 0 0 20px cyan, 
+      0 0 40px magenta;
+      border: 2px solid #0ff;
+    }
+    .inner h2 {
+      margin: 10px 0 5px;
+      font-size: 24px;
+      color: #0ff;
+    }
+    .inner p {
+      color: #ccc;
+      font-size: 16px;
+    }
+    .inner .btn {
+      margin-top: auto;
+      padding: 10px 20px;
+      background: #0ff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .inner .btn:hover {
+      background: magenta;
+      color: #fff;
+    }
+
+    
+  </style>
+
+<body>
+
+  <div class="card">
+    <div class="inner">
+      <img src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?q=80&w
+      =1160&auto=format&fit=crop&ixlib=rb-4.1
+      .0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx
+      8fGVufDB8fHx8fA%3D%3D" alt="Profile" />
+      <h2>Animate Code</h2>
+      <p>Let's create some animations together! 
+        ✨<br>Exploring...</p>
+      <button class="btn">Subscribe</button>
+    </div>
+  </div>
+
+</body>
+

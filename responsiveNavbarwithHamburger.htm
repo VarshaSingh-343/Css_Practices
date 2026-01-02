@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Hamburger Menu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding-top: 150px; 
+    }
+    nav{
+        background: navy;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem;
+        max-width: 1000px;
+        margin: 40px auto 0;
+        border-radius: 10px;
+        position: relative;
+    }
+    .logo{
+        font-size: 28px;
+        font-weight: bold;
+    }
+    input[type="checkbox"]{
+        display: none;
+    }
+    .hamburger{
+        width: 30px;
+        height: 22px;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .hamburger span{
+        height: 3px;
+        width: 100%;
+        background: white;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+    .menu{
+        display: flex;
+        gap: 2rem;
+
+    }
+    .menu a{
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+    .menu a:hover{
+        color: orange;
+    }
+    input:checked ~ label.hamburger span:nth-child(1){
+        transform: rotate(45deg) translateY(8px);
+    }
+    input:checked ~ label.hamburger span:nth-child(2){
+        opacity: 0;
+    }
+    input:checked ~ label.hamburger span:nth-child(3){
+        transform: rotate(-45deg) translateY(-8px);
+    }
+    @media (max-width: 768px) {
+        .hamburger{
+            display: flex;
+        }
+        .menu{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            background: skyblue;
+            display: none;
+            border-radius: 0 0 10px 10px;
+            padding: 1rem 2rem;
+        }
+        input:checked ~ .menu{
+            display: flex;
+        }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">MySite</div>
+
+    <input type="checkbox" id="toggle" />
+
+    <label for="toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+</body>
+</html>

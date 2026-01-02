@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<body style="background:#333; text-align:center; padding:50px; margin-top: 50px; color:#fff;">
+  <canvas id="c"></canvas><br>
+  <button style="padding: 15px;" onclick="appear()">Appear</button>
+
+  <script>
+    const c = document.getElementById("c"), ctx = c.getContext("2d");
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = "https://picsum.photos/300/200"; 
+    img.onload = () => {
+      c.width = img.width;
+      c.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      original = ctx.getImageData(0, 0, c.width, c.height);
+      ctx.clearRect(0, 0, c.width, c.height);
+    };
+    function appear() {
+      let data = ctx.createImageData(c.width, c.height);
+      let p = [], d = original.data;
+      for (let i = 0; i < d.length; i += 4) p.push(i);
+      p.sort(() => Math.random() - 0.5); 
+      let i = 0, batch = 500;
+      let t = setInterval(() => {
+        for (let j = 0; j < batch && i < p.length; j++, i++) {
+          let k = p[i];
+          data.data[k] = d[k];
+          data.data[k + 1] = d[k + 1];
+          data.data[k + 2] = d[k + 2];
+          data.data[k + 3] = d[k + 3];
+        }
+        ctx.putImageData(data, 0, 0);
+        if (i >= p.length) clearInterval(t);
+      }, 30);
+    }
+  </script>
+  
+</body>
+</html>

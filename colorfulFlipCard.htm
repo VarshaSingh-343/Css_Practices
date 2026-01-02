@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Colorful Flip Card</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        font-family: "Segoe UI", sans-serif;
+      }
+      .card{
+        width: 350px;
+        height: 450px;
+        perspective: 1000px;
+      }
+      .card-inner{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: transform 0.8s ease;
+        transform-style: preserve-3d;
+      }
+      .card:hover .card-inner{
+        transform: rotateY(180deg);
+      }
+      .card-front, .card-back{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;backface-visibility: hidden;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+      .card-front{
+        background: linear-gradient(135deg, #115edb, #c2e9fb);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #333;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .card-back{
+        background: linear-gradient(135deg, #ee0fd8 0%, #3c71cd 100%);
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+        color: #f6dddd;
+      }
+      .card-back h1{
+        margin-bottom: 0.85rem;
+      }
+      .card-back p{
+        font-size: 1.3rem;
+        color: #fff;
+        line-height: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnxrwh7oI2NXVGqOCruqdNEuA0XPh4mdBFTyjQ1VAR6nYKPXRoJqaySlURvzWW3et7vC8&usqp=CAU"
+            width="200px"
+            height="200px"
+            alt=""
+          />
+          Tap for Code Laughs <br />
+          Powered by coffee & logic
+        </div>
+        <div class="card-back">
+          <h1>More Info</h1>
+          <h1>Dev Joke Zone</h1>
+          <p>
+            <strong>Main joke:</strong><br />Why do programmers prefer dark
+            mode?<br /><em>Because light attracts bugs!</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

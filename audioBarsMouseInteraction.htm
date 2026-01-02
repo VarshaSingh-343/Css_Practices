@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Waveform Animation</title>
+  <style>
+    body {
+      background-color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .waveform {
+      display: flex;
+      gap: 8px;
+    }
+
+    .bar {
+      width: 10px;
+      height: 120px;
+      background: #00ffcc;
+      transition: height 0.2s ease;
+      transform-origin: bottom;
+    }
+  </style>
+</head>
+<body>
+  <div class="waveform" id="waveform">
+    <!-- 10 bars -->
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <script>
+    const bars = document.querySelectorAll('.bar');
+
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
+      const centerX = window.innerWidth / 2;
+
+      bars.forEach((bar, index) => {
+        const barX = bar.getBoundingClientRect().left + bar.offsetWidth / 2;
+        const distance = Math.abs(mouseX - barX);
+        const maxHeight = 120;
+        const minHeight = 20;
+
+        // Height based on distance from mouse (closer = taller)
+        const height = Math.max(minHeight, maxHeight - distance * 0.4);
+        bar.style.height = `${height}px`;
+      });
+    });
+
+  </script>
+</body>
+</html>
